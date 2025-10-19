@@ -1,0 +1,122 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #0b0a0a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 10px 20px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navbar-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ff8ca8;
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar-nav li {
+    margin: 0 15px;
+  }
+  
+  .navbar-nav .nav-link {
+    text-decoration: none;
+    color: #ff8ca8;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .active {
+    color: #fff;
+  }
+  
+  .book-btn {
+    background-color: #ff8ca8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-btn:hover {
+    background-color: #ff5c7b;
+  }
+  
+  /* Burger Icon (Hidden on larger screens) */
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #ff8ca8;
+    border-radius: 5px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      margin-top: 10px;
+      width: 100%;
+      display: none; /* Hide menu by default on mobile */
+    }
+  
+    .navbar-nav li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  
+    .navbar-nav.active {
+      display: block; /* Show menu when active */
+    }
+  
+    .burger-menu {
+      display: flex; /* Show burger icon on mobile */
+    }
+  
+    .book-btn {
+      margin-top: 15px;
+    }
+  }
+  

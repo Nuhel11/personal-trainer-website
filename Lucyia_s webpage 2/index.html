@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Trainer Website</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+    font-family: 'Libre Baskerville';
+}
+
+      /* Custom styling for the navigation bar */
+      .navbar {
+        background-color: #0b0a0a;
+      }
+      .navbar-brand,
+      .navbar-nav .nav-link {
+        color: #ff8ca8 !important;
+      }
+      .navbar-nav .nav-link {
+        margin-right: 1em;
+      }
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+      .nav-link:hover {
+        color: #ff8ca8 !important; /* Highlight color on hover */
+      }
+      .book-btn {
+        background-color: #f5ebee;
+        color: #1b1919;
+        border-radius: 20px;
+        padding: 0.5em 1.5em;
+        font-weight: bold;
+      }
+      .book-btn:hover {
+        background-color: #f1eded;
+        color: #333;
+      }
+
+      /* Home Section */
+      .home-section {
+  background-image: url("images/luciya new black.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0a0a0a;
+  color: #fff;
+  min-height: 110vh;
+  position: relative; /* Ensures child elements can be positioned absolutely */
+  padding: 1rem;
+}
+
+/* Overlay */
+.home-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Content */
+.home-content {
+  position: absolute; /* Allows precise placement */
+  top: 50%; /* Moves the content to the vertical center */
+  right: 1rem; /* Aligns the content to the right */
+  transform: translateY(-50%); /* Centers the content vertically */
+  z-index: 2; /* Ensures it appears above the overlay */
+  max-width: 800px;
+  font-weight: bold;
+  text-align: right; /* Aligns text inside to the right */
+  line-height: 1.6;
+  color: #fff;
+  padding: 2rem; /* Optional: Adjust for better spacing */
+}
+
+/* Title */
+.home-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.1em;
+  color: #ff8ca8;
+}
+
+/* Subtitle */
+.home-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5em;
+  color: #ff8ca8;
+}
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;  /* Adjust based on your design */
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+      /* Responsive Font Sizes */
+      /* FOr Phones */
+      @media (max-width: 768px) and (max-width: 1024px) {
+        .home-title {
+          font-size: 2.5vw;
+        }
+        .home-subtitle {
+          font-size: 1.2vw;
+        }
+      }
+      /* For tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-title {
+    font-size: 3vw;
+  }
+  .home-subtitle {
+    font-size: 1.5vw;
+  }
+}
+
+/* For desktops */
+@media (min-width: 1025px) {
+  .home-title {
+    font-size: 4vw;
+  }
+  .home-subtitle {
+    font-size: 2vw;
+  }
+}
+
+
+
+
+
+
+
+
+      /* About Section */
+      .about-section {
+        padding: 60px 15px;
+        background-color: #0b0b0b;
+      }
+      .about-content {
+        color: #fefcfc;
+      }
+      .about-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        color: #ff8ca8;
+      }
+      .about-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5em;
+      }
+      .about-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .stats-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .stat-box {
+        flex: 1 1 33%;
+        margin: 10px;
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff8ca8;
+      }
+      .stat-label {
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Services Section Styling */
+      .services-section {
+        padding: 80px 0;
+        background-color: #0b0b0b;
+      }
+      .services-title {
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        color: #ff8ca8;
+        margin-bottom: 0.5em;
+      }
+      .services-description {
+        text-align: center;
+        font-size: 1.1em;
+        color: #f9f8f8;
+        margin-bottom: 2em;
+      }
+      .service-box {
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+      .service-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .service-icon {
+        font-size: 2.5em;
+        color: #ff8ca8;
+        margin-bottom: 0.5em;
+        width: 60px;
+        height: 60px;
+      }
+      .service-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.5em;
+      }
+      .service-price {
+        font-size: 1.2em;
+        color: #ff8ca8;
+        margin-top: 1em;
+      }
+      .book-now-btn {
+        background-color: #ff8ca8;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 10px 20px;
+        margin-top: 1em;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
+      .book-now-btn:hover {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .focus-section {
+        padding: 80px 0;
+        background-color: #0a0a0a;
+      }
+      .section-title {
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        color: #ff8ca8;
+        margin-bottom: 0.5em;
+      }
+      .section-description {
+        text-align: center;
+        font-size: 1.1em;
+        color: #f9f8f8;
+        margin-bottom: 2em;
+      }
+      .focus-box {
+        background: #090909;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .focus-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+      .focus-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #ff8ca8;
+      }
+      .focus-description {
+        font-size: 0.9rem;
+        color: #fdfcfc;
+        margin-top: 10px;
+      }
+
+      .services1-section {
+        background-color: #070707;
+        padding: 50px 0;
+      }
+
+      .service1-box {
+        background: #070707;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .service1-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ff8ca8;
+        margin-bottom: 15px;
+      }
+
+      .service1-box p {
+        font-size: 1rem;
+        color: #f9f5f5;
+        line-height: 1.6;
+      }
+
+      .btn-primary {
+        background-color: #ff8ca8;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+
+      .btn-primary:hover {
+        background-color: #ff8ca8;
+      }
+
+      .text-uppercase {
+        letter-spacing: 1px;
+      }
+
+      /* Testimonials Section Styling */
+      .testimonials-section {
+        background: url("images/luciya yellow dumbell.jpg") no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+        padding: 60px 0px;
+        min-height: 100vh;
+        
+      }
+
+      .testimonials-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3); /* Light overlay effect */
+        z-index: 1;
+      }
+
+      .testimonials-section .container {
+        position: relative;
+        z-index: 2; /* Ensures content is above the background */
+      }
+
+      .testimonial-card {
+        background: #fffefe;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-text {
+        font-size: 1rem;
+        color: #131212;
+        line-height: 1.6;
+      }
+
+      .testimonial-name {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .testimonial-position {
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .stars {
+        font-size: 1.2rem;
+        color: #ffc107;
+      }
+
+      .stars i {
+        margin: 0 2px;
+      }
+      /* Contact Section Styling */
+      .contact-section {
+        padding: 80px 0;
+        background-color: #121212;
+      }
+      .contact-title {
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        color: #ff8ca8;
+        margin-bottom: 1em;
+      }
+      .contact-description {
+        text-align: center;
+        font-size: 1.1em;
+        color: #fbf8f8;
+        margin-bottom: 3em;
+      }
+      .contact-form {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .form-group label {
+        font-weight: bold;
+        color: #ff8ca8;
+      }
+      .form-control {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 12px;
+        font-size: 1em;
+        margin-bottom: 15px;
+      }
+      .form-control:focus {
+        border-color: #ff8ca8;
+        box-shadow: 0 0 5px rgba(255, 140, 168, 0.8);
+      }
+      .submit-btn {
+        background-color: #ff8ca8;
+        color: #fff;
+        border-radius: 25px;
+        padding: 12px 40px;
+        font-size: 1.1em;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+      .submit-btn:hover {
+        background-color: #ffb0c0;
+      }
+      /* Footer Section Styling */
+      .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer h3 {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .footer p {
+        font-size: 1.1em;
+        color: #aaa;
+        margin-bottom: 20px;
+      }
+
+      .footer .social-icons a {
+        font-size: 1.5em;
+        color: #fff;
+        margin: 0 10px;
+        transition: color 0.3s;
+      }
+
+      .footer .social-icons a:hover {
+        color: #ff8ca8;
+      }
+
+      .footer .footer-links a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: color 0.3s;
+      }
+
+      .footer .footer-links a:hover {
+        color: #ff8ca8;
+      }
+
+      .footer .copyright {
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #777;
+      }
+
+      /* Responsive Design for Footer */
+      @media (max-width: 768px) {
+        .footer h3 {
+          font-size: 1.8em;
+        }
+
+        .footer .social-icons a {
+          font-size: 1.3em;
+        }
+
+        .footer .footer-links a {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Lucy Atzori</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home"
+                ><i class="fas fa-home"></i> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about"
+                ><i class="fas fa-user"></i> About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services"
+                ><i class="fas fa-dumbbell"></i> Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials"
+                ><i class="fas fa-comments"></i> Testimonials</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link book-btn" href="#services">Book Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+
+    <section class="home-section" id="home">
+      <div class="home-overlay"></div>
+      <div class="home-content">
+        <h1 class="home-title">LUCY ATZORI</h1>
+        <p class="home-subtitle">Personal Trainer</p>
+        <p style="font-size:1.2em;font-family: 'Montserrat', sans-serif;">
+          I KNOW LIFE GETS BUSY,<br> BUT YOUR HEALTH DESERVES A MOMENT.
+          <br />PICTURE YOURSELF THRIVING, CONFIDENT AND FIT. <br />
+          NOW LET'S BRING THAT VISION TO LIFE TOGETHER!
+        </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Image Column -->
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <img
+              src="images/Luciya new red.jpg"
+              alt="Trainer Image"
+              class="about-img"
+            />
+          </div>
+          <!-- Content Column -->
+          <div class="col-lg-6">
+            <div class="about-content">
+              <h2 class="about-title">About Me</h2>
+              <p style="font-family: 'Montserrat', sans-serif;"class="about-description">
+                Hi, I’m Lucy Atzori, a certified personal trainer.<br>
+
+I started my fitness journey in 2021, feeling self-conscious and unsure every time I stepped into the gym. <br>Everything changed after surgery made me realize the incredible power of strength training and proper nutrition for recovery and overall health. <br> Inspired by my experience, I dove deep into learning and earned my certification to help others discover the same transformative benefits. <br>Fitness has reshaped my life, guiding me toward a healthier, more confident version of myself.
+
+<br>Now, my passion is to help women, <b>LIKE YOU</b>, achieve meaningful transformations in both health and lifestyle. <br>I’m here to offer you a path, purpose, and unwavering support as you embark on your own fitness journey!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <h2 class="services-title">WHAT I DO</h2>
+        <div class="row">
+          <!-- Service 1: Individual Session -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-box">
+              <img
+                src="images/icon dumbell.jpg"
+                alt="custom icon"
+                class="service-icon"
+              />
+              <h3 class="service-title">INDIVIDUAL SESSION</h3>
+              <p class="service-description">
+                One on one personal training, fully tailored to help you achieve
+                your goals. Each session is designed with your unique needs in
+                mind.
+              </p>
+              
+              <!-- Book Now Button -->
+              <a href="#contact" class="btn btn-primary mt-3 book-now-btn"
+                >Book Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 2: Group Session -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-box">
+              <img src="images/group.jpg" alt="custom icon" class="service-icon" />
+              <h3 class="service-title">GROUP SESSION</h3>
+              <p class="service-description">
+                Engogyus and dynamic workouts with supportive gym buddy while
+                skill recieving personalised attention.
+              </p>
+              
+              <!-- Book Now Button -->
+              <a href="#contact" class="btn btn-primary mt-3 book-now-btn"
+                >Book Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 3: Online Coaching -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-box">
+              <img
+                src="images/smartphone1.jpg"
+                alt="custom icon"
+                class="service-icon"
+              />
+              <h3 class="service-title">ONLINE COACHING</h3>
+              <p class="service-description">
+                Dynamic remote training with personalized plans, progress
+                tracking, and regular guidance for optimal results.
+              </p>
+              
+              <!-- Book Now Button -->
+              <a href="#contact" class="btn btn-primary mt-3 book-now-btn"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services1" class="services1-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <section id="services1" class="services1-section py-5">
+            <div class="container">
+              <!-- Section 1: In-Person & Online Training -->
+              <div class="row g-4 mb-5">
+                <div class="col-12">
+                  <div class="service1-box shadow-sm p-4 rounded">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
+                      <h3 class="service1-title" style="font-size: 1.5em; margin-bottom: 1rem;">IN PERSON & ONLINE</h3>
+                      <p style="font-size: 1.5em; line-height: 1.8;">
+                        I will design specific workout plans for your fitness levels and goals.
+                        <br>On-demand video workouts will be customised to your unique environment.<br>
+                        Whether it’s a few dumbbells at home, a fully equipped gym, or just
+                        bodyweight exercises. <br>I’ve got you covered!
+                      </p>
+                    </div>
+                    
+                  </div>
+
+                </div>
+              </div>
+          
+              <!-- Section 2: YouTube Workouts -->
+              <div class="row g-4">
+                <div class="col-12">
+                  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 35%;">
+                    <p style="font-weight: bold; font-size: 1.5em; color: #ff8CA8;">
+                      INTERACTIVE VIDEOS <br> WILL SHOW YOU HOW TO PERFORM EACH AND EVERY EXERCISE
+                    </p>
+                  </div>
+                  
+                  <div class="service1-box shadow-sm py-4 rounded" style="display: flex; justify-content: center; align-items: center;">
+                    <video
+                      style="
+                        width: 100%; /* Full width of the container */
+                        max-width: 600px; /* Optional: Set a maximum width for better scaling */
+                        height: auto; /* Maintain aspect ratio */
+                        object-fit: cover; /* Ensures proper fit within the container */
+                        display: block;
+                      "
+                      autoplay
+                      loop
+                      muted
+                    >
+                      <source src="images/luciya video 2.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  
+                </div>
+              </div>
+          
+            </div>
+          </section>
+          
+    <section id="focus" class="focus-section py-5">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <h2 class="section-title mb-4">Focus Areas</h2>
+            <p class="section-description mb-5">
+              My training programs are designed to help you achieve your
+              specific fitness goals with a focus on:
+            </p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="focus-box shadow-sm p-4 rounded">
+              <h4 class="focus-title">Weight Loss</h4>
+              <p class="focus-description">
+                Effective programs to shed pounds and improve overall health.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="focus-box shadow-sm p-4 rounded">
+              <h4 class="focus-title">Strength & Conditioning</h4>
+              <p class="focus-description">
+                Build strength, improve endurance, and enhance overall
+                performance.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="focus-box shadow-sm p-4 rounded">
+              <h4 class="focus-title">Nutritional Guidance</h4>
+              <p class="focus-description">
+                Tailored nutrition advice to complement your training and boost
+                results.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="focus-box shadow-sm p-4 rounded">
+              <h4 class="focus-title">Muscle Development</h4>
+              <p class="focus-description">
+                Programs designed to help you build lean muscle effectively and
+                safely.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="focus-box shadow-sm p-4 rounded">
+              <h4 class="focus-title">Body Fat Reduction</h4>
+              <p class="focus-description">
+                Comprehensive plans to reduce fat and achieve a leaner physique.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="focus-box shadow-sm p-4 rounded">
+              <h4 class="focus-title">Corrective Exercise</h4>
+              <p class="focus-description">
+                Targeted exercises to improve posture, mobility, and injury
+                prevention.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5" id="testimonials">
+      <div class="container">
+        <h2 style="color: #ff8ca8" class="testimonials-title text-center mb-4">
+          What My Clients Say
+        </h2>
+       
+
+        <div class="row g-4">
+          <!-- Testimonial Card 1 -->
+          <div class="col-md-4">
+            <div class="testimonial-card shadow-sm p-4 rounded text-center">
+              <!-- Star Icons -->
+              <div class="stars mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="testimonial-text">
+                "Training with Lucy has been a life-changing experience.
+                I feel stronger and more energized every day. Highly recommend!"
+              </p>
+              <div class="testimonial-name mt-3">Mary H.</div>
+              <div class="testimonial-position">Sales Assistant</div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div class="col-md-4">
+            <div class="testimonial-card shadow-sm p-4 rounded text-center">
+              <!-- Star Icons -->
+              <div class="stars mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="testimonial-text">
+                "I never thought I'd enjoy working out, but with the customised
+                plans and guidance from Lucy, fitness has become a part
+                of my lifestyle. Her positive attitude and attention to details keep me motivated, and I see tangible results over time. If you’re looking for someone who truly cares about your progress, she’s the one to go to!"
+              </p>
+              <div class="testimonial-name mt-3">Vick T.</div>
+              <div class="testimonial-position">Marketing Specialist</div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="col-md-4">
+            <div class="testimonial-card shadow-sm p-4 rounded text-center">
+              <!-- Star Icons -->
+              <div class="stars mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="testimonial-text">
+                "The fitness programs offered by Lucy are fantastic. I've seen
+                incredible improvements in my stamina and strength. I can't
+                recommend Lucy enough."
+              </p>
+              <div class="testimonial-name mt-3">Thahia A.</div>
+              <div class="testimonial-position">Student</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+      <div class="container text-center">
+        <h2 class="contact-title mb-3" style="color: #ff8ca8">Contact Me</h2>
+        <p class="contact-description mb-4">
+          Have any questions or want to schedule a session? Get in touch by
+          filling out the form below!
+        </p>
+
+        <!-- Contact Form -->
+        <form
+          action="https://formspree.io/f/xeoqbadg"
+          method="POST"
+          class="contact-form mx-auto"
+          style="max-width: 600px"
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="background-color: #ff8ca8; border: none"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <!-- Contact Details -->
+        <div class="contact-info mt-5">
+          <h4 style="color: #ccc">Or Reach Me At:</h4>
+          <ul style="color: #ccc" class="list-unstyled">
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:lucyatrozi.fit@outlook.com"
+                >lucyatrozi.fit@outlook.com</a
+              >
+            </li>
+            <li>
+              <strong>Phone:</strong>
+              <a href="tel:+447850263301">+44 7850 263301</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer py-4" style="background-color: #222; color: #fff">
+      <div class="container text-center">
+        
+
+        <!-- Social Media Icons -->
+        <div class="social-icons my-3">
+        <p style="color:#ffffff; text-size-adjust: 30px;"align="center">Stay connected for more updates, fitness tips, and motivation!</p>
+<!-- Link to Instagram Profile -->
+<a
+  href="https://www.instagram.com/lucy.atzori_fitness/?hl=en"
+  target="_blank"
+  style="
+    text-decoration: none;
+    color: #E1306C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <!-- Instagram Icon -->
+  <i class="fab fa-instagram fa-3x" style="margin-right: 10px;"></i>
+  <!-- Profile Name -->
+  <span style="font-size: 24px; font-weight: bold;">@lucy.atzori_fitness</span>
+</a>
+
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links mb-3">
+          <a href="#home" class="mx-2" style="color: #ff8ca8">Home</a>
+          <a href="#about" class="mx-2" style="color: #ff8ca8">About</a>
+          <a href="#services" class="mx-2" style="color: #ff8ca8">Services</a>
+          <a href="#testimonials" class="mx-2" style="color: #ff8ca8"
+            >Testimonials</a
+          >
+          <a href="#contact" class="mx-2" style="color: #ff8ca8">Contact</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+          <p>&copy; 2024 Lucy Atzori Fitness. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
